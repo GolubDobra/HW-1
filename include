@@ -2,22 +2,22 @@
 #include "stack.h"
 using namespace std;
 
-int main() {
-	stack<int> stack_A(10);
-	size_t A = 0;
-	int element_A;
+int main() 
+{
+	cout << "ЭЛЕМЕНТЫ СТЕКА: " << endl;
+		
+	stack<int> intStack;
+	intStack.push(0);
+	intStack.push(1);
+	intStack.push(2);
+	intStack.push(3);
+	intStack.push(4);
 
-	while (A++ < 10) {
-		cin >> element_A;
-		stack_A.push(element_A);
+	for (int i = 0; i < 4; i++) 
+	{
+		cout << intStack.pop() << endl;
 	}
-	cout << "stack elements:" << endl;
-	cout << endl;
-	stack_A.print_stack();
-	for (int i = 10; i > 5; i--)
-		stack_A.pop();
-	cout << "after removing: " << endl;
-	stack_A.print_stack();
-	system("pause");
-	return 0;
+		 
+	cout << "Номер элемента стека: " << intStack.count() << endl;
+	return 0;	
 }
