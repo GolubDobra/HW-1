@@ -22,3 +22,4 @@ int main()
 	cout << "Номер элемента стека: " << intStack.count() << endl;
 	return 0;	
 }
+```
