@@ -1,5 +1,5 @@
-#ifndef Stack_h
-#define Stack_h
+#ifndef STACK_HPP
+#define STACK_HPP
 
 #include <iostream>
 #include <cassert>
@@ -10,46 +10,49 @@ template <typename T>
 class stack
 {
 private:
-	T * array_;
-	size_t array_size_;
-	size_t count_;
+    T * array_;
+    size_t array_size_;
+    size_t count_;
 public:
-	stack() {
-		array_size_ = 10;
-		array_ = new T[array_size_];
-		count_ = 1;
-	}
-
-	stack(size_t n) {
-		array_size_ = n;
-		array_ = new T[array_size_];
-		count_ = 1;
-	}
-
-	size_t count() const {
-		return count_;
-	}
-
-	void push(T const &value) {
-		if (count_ == array_size_) {
-			T *array_2 = new T[2 * array_size_];
-			for (size_t i = 0; i != array_size_; i++)
-				array_2[i] = array_[i];
-			delete[] array_;
-			array_ = array_2;
-		}
-		array_[count_++] = value;
-	}
-
-	T pop() {
-		assert(count_ != 0);
-		return array_[--count_];
-	}
-
-	void print_stack() {
-		for (size_t i = count_ - 1; i > 0; i--)
-			cout << array_[i] << endl;
-	}
+    stack()
+    {
+        array_size_ = 10;
+        array_ = new T[array_size_];
+        count_ = 1;
+    }
+    
+    size_t count() const             //находим кол-во элементов в стеке
+    {
+        return count_;
+    }
+    
+    void push(T const &value)             //перераспределение памяти(увеличение в 2 раза)
+    {
+        if (count_ == array_size_)
+        {
+            T *array_2 = new T[2 * array_size_];
+            
+            for (size_t i = 0; i != array_size_; i++)
+                array_2[i] = array_[i];
+            
+            delete[] array_;
+            array_ = array_2;
+        }
+        
+        array_[count_++] = value;
+    }
+    
+    T pop()                             //удалить элемент из вершины стека и вернуть его
+    {
+        assert(count_ != NULL);
+        return array_[--count_];
+    }
+    
+    void print()                         //печать стека
+    {
+        for (size_t i=count_-1; i>0; i--)
+            cout << array_[i] << endl;
+    }
 };
 
 #endif
