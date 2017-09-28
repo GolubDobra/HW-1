@@ -44,7 +44,7 @@ public:
     
     T pop()                             //удалить элемент из вершины стека и вернуть его
     {
-        assert(count_ != NULL);
+        assert(count_ != 0);
         return array_[--count_];
     }
     
