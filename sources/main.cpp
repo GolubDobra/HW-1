@@ -26,6 +26,7 @@ int main()
     intStack.push(8);
     intStack.push(9);
     
+    cout << "STACK\n";
     intStack.print();
     
     for (int i = 0; i < 10; i++) {
