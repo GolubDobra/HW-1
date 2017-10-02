@@ -50,7 +50,7 @@ public:
     
     void print()                         //печать стека
     {
-        for (size_t i=count_-1; i>0; i--)
+        for (size_t i=count_-1; i>=0; i--)
             cout << array_[i] << endl;
     }
 };
