@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "stack.h"
+#include "stack.hpp"
 using namespace std;
 
 int main()
