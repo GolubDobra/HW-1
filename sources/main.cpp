@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  stack_main.cpp
+//  
 //
 //  Created by Валерия Колпакова on 28.09.17.
 //  Copyright © 2017 Валерия Колпакова. All rights reserved.
